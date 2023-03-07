@@ -1,9 +1,9 @@
 #ifndef LOCKER_H
 #define LOCKER_H
 
-#include <mutex.h>
+#include <mutex>
 #include <pthread.h>
-#include <exception.h>
+#include <exception>
 #include <semaphore.h>
 
 // 线程同步机制封装类
@@ -41,7 +41,7 @@ private:
 class cond{
 public:
     cond(){
-        if(pthread_cond_init(&_cond, NULL) != 0){
+        if(pthread_cond_init(&m_cond, NULL) != 0){
             throw std::exception();
         }
     }
